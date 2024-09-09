@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npx puppeteer browsers install"
+    "postinstall": "npx puppeteer-core-install"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/node": "^18.0.6",
     "express": "^4.19.2",
-    "puppeteer": "^23.3.0",
+    "puppeteer-core": "^23.3.0",
     "undici": "^6.19.8"
   }
 }
