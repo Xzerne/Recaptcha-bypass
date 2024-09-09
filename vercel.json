@@ -6,13 +6,13 @@
       "use": "@vercel/node"
     }
   ],
+  "env": {
+    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
+  },
   "routes": [
     {
       "src": "/(.*)",
       "dest": "/index.js"
     }
-  ],
-  "env": {
-    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
-  }
+  ]
 }
