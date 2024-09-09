@@ -1,8 +1,12 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const puppeteerExtra = require('puppeteer-extra');
+const pluginStealth = require('puppeteer-extra-plugin-stealth');
 const undici = require('undici');
 const app = express();
 const port = 3000;
+
+// Add the stealth plugin to puppeteer-extra
+puppeteerExtra.use(pluginStealth());
 
 function rdn(min, max) {
   min = Math.ceil(min);
@@ -115,13 +119,14 @@ app.use(express.json());
 
 app.post('/solve', async (req, res) => {
   const url = req.body.url;
-  
+
   if (!url) {
     return res.status(400).json({ error: 'URL is required' });
   }
 
   try {
-    const browser = await puppeteer.launch({executablePath: '/vercel/.cache/puppeteer/chrome-headless-shell/linux-128.0.6613.119/chrome-headless-shell-linux64/chrome-headless-shell', headless: true});
+    const executablePath = '/vercel/.cache/puppeteer/chrome/linux-128.0.6613.119/chrome-linux64/chrome'; // Adjust the path as necessary
+    const browser = await puppeteerExtra.launch({ executablePath, headless: true });
     const page = await browser.newPage();
 
     await page.goto(url);
@@ -137,12 +142,10 @@ app.post('/solve', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: `Internal Server Error : ${error}`});
+    res.status(500).json({ error: `Internal Server Error: ${error.message}` });
   }
 });
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
-
-
