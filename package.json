@@ -14,8 +14,8 @@
     "@types/node": "^18.0.6",
     "express": "^4.19.2",
     "puppeteer": "^23.3.0",
-    "puppeteer-extra": "^4.2.2",  // Update this to a valid version
-    "puppeteer-extra-plugin-stealth": "^2.10.0",  // Make sure this is a valid version
+    "puppeteer-extra": "^4.2.2",  
+    "puppeteer-extra-plugin-stealth": "^2.10.0",
     "undici": "^6.19.8"
   }
 }
