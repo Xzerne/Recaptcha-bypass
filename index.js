@@ -126,7 +126,18 @@ app.post('/solve', async (req, res) => {
 
   try {
     const executablePath = '/vercel/.cache/puppeteer/chrome/linux-128.0.6613.119/chrome-linux64/chrome'; // Adjust the path as necessary
-    const browser = await puppeteerExtra.launch({ executablePath, headless: true });
+    const browser = await puppeteerExtra.launch({
+      headless: false,
+      args: [
+        '--window-size=360,500',
+        '--window-position=000,000',
+        '--no-sandbox',
+        '--disable-dev-shm-usage',
+        '--disable-web-security',
+        '--disable-features=IsolateOrigins',
+        '--disable-site-isolation-trials'
+      ]
+    });
     const page = await browser.newPage();
 
     await page.goto(url);
