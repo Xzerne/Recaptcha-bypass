@@ -13,6 +13,6 @@
     }
   ],
 "env": {
-    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true" // Skip Chromium download if handled manually
+    "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD": "true"
   }
 }
