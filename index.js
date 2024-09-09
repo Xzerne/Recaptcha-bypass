@@ -121,7 +121,7 @@ app.post('/solve', async (req, res) => {
   }
 
   try {
-    const browser = await puppeteer.launch({executablePath: '/vercel/.cache/puppeteer/chrome/linux-128.0.6613.119/chrome-linux64/chrome'});
+    const browser = await puppeteer.launch({executablePath: '/vercel/.cache/puppeteer/chrome-headless-shell/linux-128.0.6613.119/chrome-headless-shell-linux64/chrome-headless-shell', headless: true});
     const page = await browser.newPage();
 
     await page.goto(url);
