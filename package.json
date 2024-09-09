@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npx puppeteer-core-install"
+    "postinstall": "npx puppeteer-install"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +13,9 @@
   "dependencies": {
     "@types/node": "^18.0.6",
     "express": "^4.19.2",
-    "puppeteer-extra": "^4.2.1",
-    "puppeteer-extra-plugin-stealth": "^2.10.0",
-    "puppeteer-core": "^23.3.0",
+    "puppeteer": "^23.3.0",
+    "puppeteer-extra": "^4.2.2",  // Update this to a valid version
+    "puppeteer-extra-plugin-stealth": "^2.10.0",  // Make sure this is a valid version
     "undici": "^6.19.8"
   }
 }
