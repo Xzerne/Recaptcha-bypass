@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "npx puppeteer-install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -14,8 +13,10 @@
     "@types/node": "^18.0.6",
     "express": "^4.19.2",
     "puppeteer": "^23.3.0",
-    "puppeteer-extra": "^4.2.2",  
-    "puppeteer-extra-plugin-stealth": "^2.10.0",
+    "puppeteer-core": "^23.3.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "undici": "^6.19.8"
   }
 }
+
